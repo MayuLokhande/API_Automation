@@ -10,11 +10,17 @@ Install RequestsLibrary by using pip install robotframework-requests
 
 3. SETUP FOLDER STRUCTURE
 api_Automation
+
 - tests
+   
    -api_get_request.robot
+   
    -api_post_request.robot
+   
    -api_put_request.robot
+
 -output.xml  .... it will  automatically generate
+
 -report.html   ....it will  automatically generate
 
 4. EXECUTION INTRUCTIONS

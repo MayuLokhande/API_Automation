@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.9 on win32)" generated="2025-10-25T14:01:17.711469" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\mayur\OneDrive\Desktop\api_automation\tests">
+<suite id="s1-s1" name="Api Get Request" source="C:\Users\mayur\OneDrive\Desktop\api_automation\tests\api_get_request.robot">
+<test id="s1-s1-t1" name="Get_users" line="12">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:18.345562" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-25T14:01:18.345562" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:19.594069" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-25T14:01:19.594069" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 25 Oct 2025 08:31:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"334-l4nkyILfvcYPQGUAclAvJEuZIac"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '300', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=pjSl6rUE8%2BMf%2FE8Y1fI5ZfXCutFuMT5x4Znj65tkjz4%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1761375417"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=pjSl6rUE8%2BMf%2FE8Y1fI5ZfXCutFuMT5x4Znj65tkjz4%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1761375417"', 'Server': 'cloudflare', 'Vary': 'Origin, accept-encoding', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': '0e9ff601-9d1f-e6bb-a6df-ffe1130a4402', 'X-Xss-Protection': '1; mode=block', 'Age': '5663', 'Cache-Control': 'max-age=14400', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '99405b66f95517f8-SIN'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."},"_meta":{"powered_by":"🚀 ReqRes - Deploy backends in 30 seconds","upgrade_url":"https://app.reqres.in/upgrade","docs_url":"https://reqres.in","template_gallery":"https://app.reqres.in/templates","message":"This API is powered by ReqRes. Deploy your own backend in 30 seconds!","features":["30 Second Backend Templates","Custom API Endpoints","Data Persistence","Real-time Analytics"],"upgrade_cta":"Upgrade to Pro for unlimited requests, custom endpoints, and data persistence"}} 
+ </msg>
+<msg time="2025-10-25T14:01:19.594069" level="INFO">C:\Users\mayur\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-10-25T14:01:19.595081" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users/2</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-25T14:01:18.346559" elapsed="1.248522"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.595081" elapsed="0.002018"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Body: ${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.597099" elapsed="0.001012"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-25T14:01:19.599026" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.598111" elapsed="0.000915"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.text}</arg>
+<arg>"email"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.599026" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.text}</arg>
+<arg>${first_name}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.600055" elapsed="0.000000"/>
+</kw>
+<doc>Get list of users and validate response</doc>
+<status status="PASS" start="2025-10-25T14:01:18.344544" elapsed="1.255511"/>
+</test>
+<test id="s1-s1-t2" name="get_unknownresourse" line="27">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:19.602052" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-25T14:01:19.601055" elapsed="0.000997"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:21.713743" level="INFO">GET Request : url=https://reqres.in/api/unknown/2 
+ path_url=/api/unknown/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-25T14:01:21.713743" level="INFO">GET Response : url=https://reqres.in/api/unknown/2 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 25 Oct 2025 08:31:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"304-RaoWbZwkZSSi/Hb+ltJE9jaWG3M"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '49', 'Ratelimit-Reset': '68', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=%2B7i8YbA36X3HGWDyJwD4oky36pkaHLXkXnjrJ%2BBkAhE%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1761379953"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=%2B7i8YbA36X3HGWDyJwD4oky36pkaHLXkXnjrJ%2BBkAhE%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1761379953"', 'Server': 'cloudflare', 'Vary': 'Origin, accept-encoding', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': 'ab72baa1-7729-e977-d5c0-91fc6a5db1a8', 'X-Xss-Protection': '1; mode=block', 'Age': '1129', 'Cache-Control': 'max-age=14400', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '99405b753bb4a3e0-SIN'} 
+ body={"data":{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."},"_meta":{"powered_by":"🚀 ReqRes - Deploy backends in 30 seconds","upgrade_url":"https://app.reqres.in/upgrade","docs_url":"https://reqres.in","template_gallery":"https://app.reqres.in/templates","message":"This API is powered by ReqRes. Deploy your own backend in 30 seconds!","features":["30 Second Backend Templates","Custom API Endpoints","Data Persistence","Real-time Analytics"],"upgrade_cta":"Upgrade to Pro for unlimited requests, custom endpoints, and data persistence"}} 
+ </msg>
+<msg time="2025-10-25T14:01:21.714762" level="INFO">C:\Users\mayur\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-10-25T14:01:21.714762" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/unknown/2</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-25T14:01:19.603052" elapsed="2.112587"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.715639" elapsed="0.001063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Body: ${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.717707" elapsed="0.001033"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-25T14:01:21.718740" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.718740" elapsed="0.000997"/>
+</kw>
+<doc>Try to get unknown resourse</doc>
+<status status="PASS" start="2025-10-25T14:01:19.601055" elapsed="2.118682"/>
+</test>
+<status status="PASS" start="2025-10-25T14:01:17.748467" elapsed="3.972173"/>
+</suite>
+<suite id="s1-s2" name="Api Post Request" source="C:\Users\mayur\OneDrive\Desktop\api_automation\tests\api_post_request.robot">
+<test id="s1-s2-t1" name="Post_Create_User" line="12">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:21.731637" level="INFO">Creating Session using : alias=mysession, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-25T14:01:21.731637" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-25T14:01:21.733072" level="INFO">${body} = {'name': 'Mayura123', 'job': 'QA Tester'}</msg>
+<var>${body}</var>
+<arg>name=Mayura123</arg>
+<arg>job=QA Tester</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.733072" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-25T14:01:21.734093" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.734093" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:24.674805" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '41'} 
+ body=b'{"name": "Mayura123", "job": "QA Tester"}' 
+ </msg>
+<msg time="2025-10-25T14:01:24.674805" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/users 
+ status=201, reason=Created 
+ headers={'Date': 'Sat, 25 Oct 2025 08:31:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '59', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'Location', 'Cache-Control': 'no-cache', 'etag': 'W/"3b-vwjUzEb7+eByW+tmJBHk1hRmbpw"', 'expires': '-1', 'location': 'https://jsonplaceholder.typicode.com/users/11', 'nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'pragma': 'no-cache', 'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=mmK9K6Wac4T9hK9bF3TRP8BB6KKVDqkU4W5bttwkYGI%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1761381085"}],"max_age":3600}', 'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=mmK9K6Wac4T9hK9bF3TRP8BB6KKVDqkU4W5bttwkYGI%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1761381085"', 'Server': 'cloudflare', 'vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'via': '2.0 heroku-router', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '999', 'x-ratelimit-reset': '1761381127', 'cf-cache-status': 'DYNAMIC', 'CF-RAY': '99405b833c9e3de2-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "name": "Mayura123",
+  "job": "QA Tester",
+  "id": 11
+} 
+ </msg>
+<msg time="2025-10-25T14:01:24.674805" level="INFO">C:\Users\mayur\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-10-25T14:01:24.675804" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-25T14:01:21.735089" elapsed="2.940715"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.675804" elapsed="0.001044"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Body: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.677912" elapsed="0.001076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Body: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.678988" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-25T14:01:24.681981" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.680947" elapsed="0.001034"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${body}</arg>
+<arg>name</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.681981" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${body}</arg>
+<arg>job</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.682990" elapsed="0.000958"/>
+</kw>
+<status status="PASS" start="2025-10-25T14:01:21.730638" elapsed="2.953310"/>
+</test>
+<status status="PASS" start="2025-10-25T14:01:21.723638" elapsed="2.962251"/>
+</suite>
+<suite id="s1-s3" name="Api Put Request" source="C:\Users\mayur\OneDrive\Desktop\api_automation\tests\api_put_request.robot">
+<test id="s1-s3-t1" name="Put_Updateuser" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:24.695911" level="INFO">Creating Session using : alias=mysession, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-25T14:01:24.694905" elapsed="0.001006"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-25T14:01:24.696902" level="INFO">${body} = {'name': 'Mayura', 'job': 'Tester'}</msg>
+<var>${body}</var>
+<arg>name=Mayura</arg>
+<arg>job=Tester</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.696902" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-25T14:01:24.697929" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.697929" elapsed="0.000000"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-10-25T14:01:26.354888" level="INFO">PUT Request : url=https://jsonplaceholder.typicode.com/users/2 
+ path_url=/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '35'} 
+ body=b'{"name": "Mayura", "job": "Tester"}' 
+ </msg>
+<msg time="2025-10-25T14:01:26.354888" level="INFO">PUT Response : url=https://jsonplaceholder.typicode.com/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 25 Oct 2025 08:31:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Cache-Control': 'no-cache', 'etag': 'W/"34-wtFpRPZdSuHKsBruSOrgOWodZxA"', 'expires': '-1', 'nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'pragma': 'no-cache', 'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=GKGSVhxNEubQE2F73IBxlSGauKsq%2B7S46elEFpIdS6I%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1761381086"}],"max_age":3600}', 'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=GKGSVhxNEubQE2F73IBxlSGauKsq%2B7S46elEFpIdS6I%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1761381086"', 'Server': 'cloudflare', 'vary': 'Origin, Accept-Encoding', 'via': '2.0 heroku-router', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '998', 'x-ratelimit-reset': '1761381127', 'cf-cache-status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '99405b8cfbb4fdf6-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "name": "Mayura",
+  "job": "Tester",
+  "id": 2
+} 
+ </msg>
+<msg time="2025-10-25T14:01:26.354888" level="INFO">C:\Users\mayur\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-10-25T14:01:26.355885" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/2</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-25T14:01:24.698913" elapsed="1.656972"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:26.355885" elapsed="0.001558"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Body: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-25T14:01:26.357443" elapsed="0.001011"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-25T14:01:26.360454" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-25T14:01:26.359455" elapsed="0.000999"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${body}</arg>
+<arg>name</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:26.360454" elapsed="0.001000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${body}</arg>
+<arg>job</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-25T14:01:26.361454" elapsed="0.000000"/>
+</kw>
+<doc>update users and validate response</doc>
+<status status="PASS" start="2025-10-25T14:01:24.694905" elapsed="1.668549"/>
+</test>
+<status status="PASS" start="2025-10-25T14:01:24.687887" elapsed="1.676566"/>
+</suite>
+<status status="PASS" start="2025-10-25T14:01:17.713468" elapsed="8.652992"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="Api Get Request" id="s1-s1" pass="2" fail="0" skip="0">Tests.Api Get Request</stat>
+<stat name="Api Post Request" id="s1-s2" pass="1" fail="0" skip="0">Tests.Api Post Request</stat>
+<stat name="Api Put Request" id="s1-s3" pass="1" fail="0" skip="0">Tests.Api Put Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
